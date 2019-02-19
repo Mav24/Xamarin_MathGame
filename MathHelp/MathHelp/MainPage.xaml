@@ -6,9 +6,22 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Margin="20" FontSize="25" Text="Welcome to Math Class!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Start" />
+
+
+        <Label x:Name="result" Text="" 
+               FontSize="50" 
+               HorizontalOptions="Center"/>
+
+        <Label x:Name="question" Margin="40" FontSize="75" Text="5"
+               HorizontalOptions="Center" 
+               VerticalTextAlignment="Center" />
+
+        <Entry x:Name="answer" Keyboard="Numeric"/>
+        <Button x:Name="submit" Text="Submit" Clicked="Submit_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>

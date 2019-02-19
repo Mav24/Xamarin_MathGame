@@ -11,28 +11,38 @@ namespace MathHelp
     {
         int firstNumber = 0;
         int secondNumber = 0;
+        int rightAnswer = 0;
+        int wrongAnswer = 0;
+        
+
         public MainPage()
         {
             InitializeComponent();
             RandomNumber();
+            
         }
 
         private void Submit_Clicked(object sender, EventArgs e)
         {
             var total = firstNumber * secondNumber;
-            var userAnswer = int.Parse(answer.Text);
-            if (userAnswer == total)
+            if(!int.TryParse(answer.Text , out int userAnswer))
             {
-                result.TextColor = Color.Green;
-                result.Text = "Correct!";
+                DisplayAlert("Error", "Numeric values only", "Try Again!");
+            }
+            else if (userAnswer == total)
+            {
+                rightAnswer++;
+                totalRight.TextColor = Color.Green;
+                totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
                 answer.Focus();
             }
             else
             {
-                result.TextColor = Color.Red;
-                result.Text = "Sorry try again!";
+                wrongAnswer++;
+                totalWrong.TextColor = Color.Red;
+                totalWrong.Text = $"Wrong: {wrongAnswer}";
                 answer.Text = "";
                 answer.Focus();
             }

@@ -6,20 +6,28 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Margin="20" FontSize="25" Text="Welcome to Math Class!" 
+        <Label Margin="0,15,0,5" FontSize="25" Text="Multiplication" 
            HorizontalOptions="Center"
-           VerticalOptions="Start" />
+           VerticalOptions="Start" 
+               TextColor="CadetBlue" />
 
 
-        <Label x:Name="result" Text="" 
-               FontSize="50" 
-               HorizontalOptions="Center"/>
+        <Label x:Name="totalRight"
+               Margin="0,0,0,5"
+               Text="" 
+               FontSize="25"
+               HorizontalOptions="Start" />
+        
+        <Label x:Name="totalWrong" 
+               Margin="0,0,0,5" Text=""
+               FontSize="25"
+               HorizontalOptions="Start" />
 
-        <Label x:Name="question" Margin="40" FontSize="75" Text="5"
+        <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text="5"
                HorizontalOptions="Center" 
                VerticalTextAlignment="Center" />
 
-        <Entry x:Name="answer" Keyboard="Numeric"/>
+        <Entry x:Name="answer" Keyboard="Numeric" VerticalOptions="Center"/>
         <Button x:Name="submit" Text="Submit" Clicked="Submit_Clicked"/>
 
     </StackLayout>

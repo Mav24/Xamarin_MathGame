@@ -5,31 +5,16 @@
              x:Class="MathHelp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Margin="0,15,0,5" FontSize="25" Text="Multiplication" 
-           HorizontalOptions="Center"
-           VerticalOptions="Start" 
-               TextColor="CadetBlue" />
-
-
-        <Label x:Name="totalRight"
-               Margin="0,0,0,5"
-               Text="" 
-               FontSize="25"
-               HorizontalOptions="Start" />
+        <Label Text="Math!" FontSize="50"
+               HorizontalOptions="CenterAndExpand" />
         
-        <Label x:Name="totalWrong" 
-               Margin="0,0,0,5" Text=""
-               FontSize="25"
-               HorizontalOptions="Start" />
-
-        <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text="5"
-               HorizontalOptions="Center" 
-               VerticalTextAlignment="Center" />
-
-        <Entry x:Name="answer" Keyboard="Numeric" VerticalOptions="Center"/>
-        <Button x:Name="submit" Text="Submit" Clicked="Submit_Clicked"/>
-
+        <Button x:Name="multiplication"
+                HorizontalOptions="Center"
+                Text="Multiplication" />
+        
+        <Button x:Name="division" Margin="10"
+                HorizontalOptions="Center"
+                Text="Division" />
     </StackLayout>
 
 </ContentPage>

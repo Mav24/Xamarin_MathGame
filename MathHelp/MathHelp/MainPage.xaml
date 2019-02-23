@@ -5,16 +5,30 @@
              x:Class="MathHelp.MainPage">
 
     <StackLayout>
-        <Label Text="Math!" FontSize="50"
-               HorizontalOptions="CenterAndExpand" />
         
-        <Button x:Name="multiplication"
+        <Label Text="Math Practice" FontSize="50"
+               HorizontalOptions="Center"/>
+        
+        <StackLayout Margin="0,20">
+            
+        <Button x:Name="multiplication" Margin="10"
                 HorizontalOptions="Center"
                 Text="Multiplication" />
         
         <Button x:Name="division" Margin="10"
                 HorizontalOptions="Center"
                 Text="Division" />
+
+        <Button x:Name="addition" Margin="10"
+                HorizontalOptions="Center"
+                Text="Addition" />
+
+        <Button x:Name="subtraction" Margin="10"
+                HorizontalOptions="Center"
+                Text="Subtraction" />
+            
+        </StackLayout>
+        
     </StackLayout>
 
 </ContentPage>

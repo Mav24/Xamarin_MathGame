@@ -2,31 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathHelp.Multiplication">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Margin="0,15,0,5" FontSize="25" Text="Multiplication" 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Exit" Text="Exit" Order="Default"
+                     Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Label Margin="0,15,0,5" FontSize="25" Text="Multiplication" 
            HorizontalOptions="Center"
            VerticalOptions="Start" 
                TextColor="CadetBlue" />
 
 
-        <Label x:Name="totalRight"
+            <Label x:Name="totalRight"
                Margin="0,0,0,5"
                Text="" 
                FontSize="25"
                HorizontalOptions="Start" />
 
-        <Label x:Name="totalWrong" 
+            <Label x:Name="totalWrong" 
                Margin="0,0,0,5" Text=""
                FontSize="25"
                HorizontalOptions="Start" />
 
-        <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text="5"
+            <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text="5"
                HorizontalOptions="Center" 
                VerticalTextAlignment="Center" />
 
-        <Entry x:Name="answer" Keyboard="Numeric" VerticalOptions="Center"/>
-        <Button x:Name="submit" Text="Submit" Clicked="Submit_Clicked"/>
+            <Entry x:Name="answer" 
+                   Keyboard="Numeric" 
+                   VerticalOptions="Center"/>
+            
+            <Button x:Name="submit" 
+                    Text="Submit" 
+                    Clicked="Submit_Clicked"/>
 
-    </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
 </ContentPage>

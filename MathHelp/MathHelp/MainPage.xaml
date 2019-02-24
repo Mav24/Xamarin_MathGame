@@ -4,28 +4,53 @@
              xmlns:local="clr-namespace:MathHelp"
              x:Class="MathHelp.MainPage">
 
+    
+
     <StackLayout>
         
         <Label Text="Math Practice" FontSize="50"
                HorizontalOptions="Center"/>
+
+        <StackLayout>
+            <Label Text="Set difficulty" Margin="20,10,0,0"
+               FontSize="15"/>
+
+            <Slider x:Name="Difficulty" BackgroundColor="Gray" 
+                Minimum="0" Maximum="2"
+                ValueChanged="Difficulty_ValueChanged"/>
+            <Label x:Name="Setting" Margin="20,0,0,0" Text="{Binding Source={x:Reference Difficulty}, Path=Value, StringFormat='Easy'}" />
+
+            <Label Text="Game length" Margin="20,10,0,0"
+                   FontSize="15" />
+            <Slider x:Name="Game_length" BackgroundColor="gray"
+                    Maximum="20" Minimum="5"
+                    ValueChanged="Game_length_ValueChanged" />
+            <Label Margin="20,0,0,0" Text="{Binding Source={x:Reference Game_length}, Path=Value, StringFormat='Number of questions {0:N0}'}"/>
+        </StackLayout>
+
         
+
         <StackLayout Margin="0,20">
             
         <Button x:Name="multiplication" Margin="10"
                 HorizontalOptions="Center"
-                Text="Multiplication" />
+                Text="Multiplication" 
+                Clicked="Multiplication_Clicked"/>
         
         <Button x:Name="division" Margin="10"
                 HorizontalOptions="Center"
-                Text="Division" />
+                Text="Division" 
+                Clicked="Division_Clicked"/>
 
         <Button x:Name="addition" Margin="10"
                 HorizontalOptions="Center"
-                Text="Addition" />
+                Text="Addition" 
+                Clicked="Addition_Clicked"/>
 
         <Button x:Name="subtraction" Margin="10"
                 HorizontalOptions="Center"
-                Text="Subtraction" />
+                Text="Subtraction" 
+                Clicked="Subtraction_Clicked"/>
             
         </StackLayout>
         

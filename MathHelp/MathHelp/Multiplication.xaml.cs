@@ -18,9 +18,14 @@ namespace MathHelp
         int wrongAnswer = 0;
         int gameCount = 1;
         List<string> wrongQuestions = new List<string>();
+        private int difficulty;
+        private int numberOfQuestions;
+        Random num;
 
-        public Multiplication ()
+        public Multiplication (int difficulty, int numberOfQuestions)
 		{
+            this.difficulty = difficulty;
+            this.numberOfQuestions = numberOfQuestions;
 			InitializeComponent ();
             RandomNumber();
         }
@@ -58,30 +63,59 @@ namespace MathHelp
 
         }
 
-        private void RandomNumber()
+        async void RandomNumber()
         {
+            
             //wrongQuestions.Sort();
             string message = "Question you need to practice:\n";
-
-            if (gameCount == 5)
+            num = new Random();
+            if (numberOfQuestions == 0)
+            {
+                numberOfQuestions = 5;
+            }
+            if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
                 {
                     message += wrongAnswer + "\n";
                 }
-                DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
+                await DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
                     $"{message}", "OK");
                 totalRight.Text = "";
                 totalWrong.Text = "";
+                await Navigation.PopModalAsync();
             }
             else
             {
-                Random num = new Random();
-                firstNumber = num.Next(2, 10);
-                secondNumber = num.Next(2, 10);
-                question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
-            }
+                switch (difficulty)
+                {
+                    case 0:
+                        firstNumber = num.Next(1, 4);
+                        secondNumber = num.Next(1, 4);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        break;
+                    case 1:
+                        firstNumber = num.Next(2, 13);
+                        secondNumber = num.Next(2, 13);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        break;
+                    case 2:
 
+                        firstNumber = num.Next(2, 21);
+                        secondNumber = num.Next(2, 21);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+
+        }
+
+        private void Exit_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
     }
 }

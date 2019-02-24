@@ -13,5 +13,7 @@ namespace MathHelp
         {
             InitializeComponent();
         }
+
+        
     }
 }

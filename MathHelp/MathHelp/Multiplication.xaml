@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathHelp.Multiplication">
 
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center">
+            <Label HorizontalOptions="Center"
+               Text="Multiplication"
+               TextColor="Black"
+               Margin="0,15,0,0"
+               FontSize="20" />            
+        </StackLayout>
+        
+    </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Exit" Text="Exit" Order="Default"
                      Clicked="Exit_Clicked"/>
@@ -10,13 +20,7 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <!-- Place new controls here -->
-            <Label Margin="0,15,0,5" FontSize="25" Text="Multiplication" 
-           HorizontalOptions="Center"
-           VerticalOptions="Start" 
-               TextColor="CadetBlue" />
-
-
+            
             <Label x:Name="totalRight"
                Margin="0,0,0,5"
                Text="" 
@@ -28,15 +32,17 @@
                FontSize="25"
                HorizontalOptions="Start" />
 
-            <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text="5"
+            <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text=""
                HorizontalOptions="Center" 
                VerticalTextAlignment="Center" />
 
             <Entry x:Name="answer" 
                    Keyboard="Numeric" 
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center"
+                   Margin="20,0,20,0"/>
             
-            <Button x:Name="submit" 
+            <Button x:Name="submit"
+                    Margin="20"
                     Text="Submit" 
                     Clicked="Submit_Clicked"/>
 

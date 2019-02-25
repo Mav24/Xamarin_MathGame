@@ -12,14 +12,15 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Multiplication : ContentPage
 	{
+        private int difficulty;
+        private int numberOfQuestions;
         int firstNumber = 0;
         int secondNumber = 0;
         int rightAnswer = 0;
         int wrongAnswer = 0;
         int gameCount = 1;
         List<string> wrongQuestions = new List<string>();
-        private int difficulty;
-        private int numberOfQuestions;
+        
         Random num;
 
         public Multiplication (int difficulty, int numberOfQuestions)
@@ -28,6 +29,10 @@ namespace MathHelp
             this.numberOfQuestions = numberOfQuestions;
 			InitializeComponent ();
             RandomNumber();
+        }
+        public Multiplication()
+        {
+            InitializeComponent();
         }
 
         private void Submit_Clicked(object sender, EventArgs e)
@@ -65,9 +70,10 @@ namespace MathHelp
 
         async void RandomNumber()
         {
+            answer.Focus();
             
             //wrongQuestions.Sort();
-            string message = "Question you need to practice:\n";
+            string message = "Questions you need to practice:\n";
             num = new Random();
             if (numberOfQuestions == 0)
             {
@@ -95,14 +101,14 @@ namespace MathHelp
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
                         break;
                     case 1:
-                        firstNumber = num.Next(2, 13);
-                        secondNumber = num.Next(2, 13);
+                        firstNumber = num.Next(2, 9);
+                        secondNumber = num.Next(2, 9);
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
                         break;
                     case 2:
 
-                        firstNumber = num.Next(2, 21);
-                        secondNumber = num.Next(2, 21);
+                        firstNumber = num.Next(2, 13);
+                        secondNumber = num.Next(2, 13);
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
                         break;
                     default:

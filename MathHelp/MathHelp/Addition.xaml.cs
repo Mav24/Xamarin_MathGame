@@ -92,19 +92,19 @@ namespace MathHelp
                 switch (difficulty)
                 {
                     case 0:
-                        firstNumber = num.Next(1, 4);
-                        secondNumber = num.Next(1, 4);
+                        firstNumber = num.Next(1, 11);
+                        secondNumber = num.Next(1, 11);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
                         break;
                     case 1:
-                        firstNumber = num.Next(2, 9);
-                        secondNumber = num.Next(2, 9);
+                        firstNumber = num.Next(2, 16);
+                        secondNumber = num.Next(2, 16);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
                         break;
                     case 2:
 
-                        firstNumber = num.Next(2, 13);
-                        secondNumber = num.Next(2, 13);
+                        firstNumber = num.Next(2, 21);
+                        secondNumber = num.Next(2, 21);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
                         break;
                     default:

@@ -25,7 +25,7 @@ namespace MathHelp
 
         private void Division_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new NavigationPage(new Division(difficulty, numberOfQuestions)));
         }
 
         private void Addition_Clicked(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace MathHelp
 
         private void Subtraction_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new NavigationPage(new Subtraction(difficulty, numberOfQuestions)));
         }
 
         private void Difficulty_ValueChanged(object sender, ValueChangedEventArgs e)

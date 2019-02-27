@@ -124,7 +124,6 @@ namespace MathHelp
                 totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
             else
@@ -135,7 +134,6 @@ namespace MathHelp
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
         }

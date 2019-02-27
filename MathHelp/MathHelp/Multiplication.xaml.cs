@@ -51,7 +51,6 @@ namespace MathHelp
                 totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
             else
@@ -62,7 +61,6 @@ namespace MathHelp
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
 
@@ -70,7 +68,6 @@ namespace MathHelp
 
         async void RandomNumber()
         {
-            answer.Focus();
             
             //wrongQuestions.Sort();
             string message = "Questions you need to practice:\n";

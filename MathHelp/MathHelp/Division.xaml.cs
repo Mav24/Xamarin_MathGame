@@ -51,7 +51,6 @@ namespace MathHelp
                 totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
             else
@@ -62,7 +61,6 @@ namespace MathHelp
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
         }
@@ -82,10 +80,11 @@ namespace MathHelp
                 {
                     message += wrongAnswer + "\n";
                 }
-                await DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
-                    $"{message}", "OK");
                 totalRight.Text = "";
                 totalWrong.Text = "";
+                await DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
+                    $"{message}", "OK");
+                
                 await Navigation.PopModalAsync();
             }
             else
@@ -95,15 +94,21 @@ namespace MathHelp
                     case 0:
                         firstNumber = num.Next(1, 4);
                         secondNumber = num.Next(1, 4);
-                        if (firstNumber < secondNumber)
+                        if (firstNumber % secondNumber == 0)
                         {
-                            question.Text = $"{secondNumber} " + "/" + $" {firstNumber}".ToString();
-                            total = secondNumber / firstNumber;
+                            total = firstNumber / secondNumber;
+                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
-                            total = firstNumber / secondNumber;
+                            do
+                            {
+                                firstNumber = num.Next(1, 4);
+                                secondNumber = num.Next(1, 4);
+                                total = firstNumber / secondNumber;
+                                question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+
+                            } while (firstNumber % secondNumber == 0);
                         }
                         break;
                     case 1:

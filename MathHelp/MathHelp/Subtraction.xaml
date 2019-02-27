@@ -6,7 +6,7 @@
     <NavigationPage.TitleView>
         <StackLayout HorizontalOptions="Center">
             <Label HorizontalOptions="Center"
-               Text="Multiplication"
+               Text="Subtraction"
                TextColor="Black"
                Margin="0,15,0,0"
                FontSize="20" />

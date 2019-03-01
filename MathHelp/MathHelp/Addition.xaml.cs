@@ -18,7 +18,7 @@ namespace MathHelp
         int secondNumber = 0;
         int rightAnswer = 0;
         int wrongAnswer = 0;
-        int gameCount = 1;
+        int gameCount = 0;
         List<string> wrongQuestions = new List<string>();
         Random num;
 
@@ -51,7 +51,7 @@ namespace MathHelp
                 totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                gameCount++;
+                
             }
             else
             {
@@ -61,7 +61,7 @@ namespace MathHelp
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                gameCount++;
+                
             }
         }
 
@@ -69,10 +69,10 @@ namespace MathHelp
         {
             string message = "Questions you need to practice:\n";
             num = new Random();
-            if (numberOfQuestions == 0)
-            {
-                numberOfQuestions = 5;
-            }
+            //if (numberOfQuestions == 0)
+            //{
+            //    numberOfQuestions = 5;
+            //}
             if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
@@ -90,17 +90,20 @@ namespace MathHelp
                 switch (difficulty)
                 {
                     case 0:
+                        gameCount++;
                         firstNumber = num.Next(1, 11);
                         secondNumber = num.Next(1, 11);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     case 1:
+                        gameCount++;
                         firstNumber = num.Next(2, 16);
                         secondNumber = num.Next(2, 16);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
                         break;
                     case 2:
-
+                        gameCount++;
                         firstNumber = num.Next(2, 21);
                         secondNumber = num.Next(2, 21);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
@@ -113,6 +116,7 @@ namespace MathHelp
 
         private void Exit_Clicked(object sender, EventArgs e)
         {
+            
             Navigation.PopModalAsync();
         }
     }

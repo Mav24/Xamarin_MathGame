@@ -14,8 +14,7 @@ namespace MathHelp
         public MainPage()
         {
             InitializeComponent();
-            
-            
+            Setting.TextColor = Color.Green;
         }
 
         private void Multiplication_Clicked(object sender, EventArgs e)
@@ -30,7 +29,8 @@ namespace MathHelp
 
         private void Addition_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new Addition(difficulty, numberOfQuestions)));
+                Navigation.PushModalAsync(new NavigationPage(new Addition(difficulty, numberOfQuestions)));
+            
         }
 
         private void Subtraction_Clicked(object sender, EventArgs e)
@@ -44,14 +44,17 @@ namespace MathHelp
             if (difficulty == 0)
             {
                 Setting.Text = "Easy";
+                Setting.TextColor = Color.Green;
             }
             else if (difficulty == 1)
             {
                 Setting.Text = "Medium";
+                Setting.TextColor = Color.Orange;
             }
             else
             {
                 Setting.Text = "Hard";
+                Setting.TextColor = Color.Red;
             }
         }
 

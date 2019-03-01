@@ -13,30 +13,43 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout>
-        
-        <StackLayout>
-            <Label Text="Set difficulty" Margin="20,20,0,0"
-               FontSize="15"/>
+    <StackLayout Margin="0,20,0,0">
 
-            <Slider x:Name="Difficulty" Margin="20,0,20,0" BackgroundColor="Gray" 
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Set difficulty:" Margin="40,20,0,0"
+                       TextColor="Black" 
+                       FontSize="15"
+                       VerticalTextAlignment="Center"/>
+
+                <Label x:Name="Setting" Margin="10,20,0,0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding Source={x:Reference Difficulty}, Path=Value, StringFormat='Easy'}" />
+            </StackLayout>
+
+            <Slider x:Name="Difficulty" Margin="40,0,40,0" BackgroundColor="Gray" 
                 Minimum="0" Maximum="2"
                 ValueChanged="Difficulty_ValueChanged"/>
-            <Label x:Name="Setting" Margin="20,0,0,0" Text="{Binding Source={x:Reference Difficulty}, Path=Value, StringFormat='Easy'}" />
 
-            <Label Text="Game length" Margin="20,10,0,0"
-                   FontSize="15" />
-            <Slider x:Name="Game_length" Margin="20,0,20,0" BackgroundColor="gray"
-                    Maximum="20" Minimum="5"
-                    ValueChanged="Game_length_ValueChanged" />
-            <Label Margin="20,0,0,0" Text="{Binding Source={x:Reference Game_length}, Path=Value, StringFormat='Number of questions {0:N0}'}"/>
-        </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Questions:" 
+                       TextColor="Black"
+                       Margin="40,10,0,0"
+                       FontSize="15" />
+                
+                <Label Margin="10,10,0,0"
+                       Text="{Binding Source={x:Reference Game_length}, Path=Value}"/>
+
+            </StackLayout>
+
+            <Slider x:Name="Game_length" Margin="40,0,40,0" BackgroundColor="gray"
+                    ValueChanged="Game_length_ValueChanged"
+                    Maximum="20" Minimum="5"/>
 
         
-
-        <StackLayout Margin="0,20">
             
-        <Button x:Name="multiplication" Margin="10"
+        <Button x:Name="multiplication" Margin="0,20,0,0"
                 HorizontalOptions="Center"
                 Text="Multiplication" 
                 Clicked="Multiplication_Clicked"/>

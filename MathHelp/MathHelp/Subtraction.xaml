@@ -2,11 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathHelp.Subtraction">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center">
+            <Label HorizontalOptions="Center"
+               Text="Subtraction"
+               TextColor="Black"
+               Margin="0,15,0,0"
+               FontSize="20" />
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Exit" Text="Exit" Order="Default"
+                     Clicked="Exit_Clicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="totalRight"
+               Margin="0,0,0,5"
+               Text="" 
+               FontSize="25"
+               HorizontalOptions="Start" />
+
+            <Label x:Name="totalWrong" 
+               Margin="0,0,0,5" Text=""
+               FontSize="25"
+               HorizontalOptions="Start" />
+
+            <Label x:Name="question" Margin="0,0,0,0" FontSize="75" Text=""
+               HorizontalOptions="Center" 
+               VerticalTextAlignment="Center" />
+
+            <Entry x:Name="answer" 
+                   Keyboard="Numeric" 
+                   VerticalOptions="Center"
+                   Margin="20,0,20,0"/>
+
+            <Button x:Name="submit"
+                    Margin="20"
+                    Text="Submit"
+                    Clicked="Submit_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

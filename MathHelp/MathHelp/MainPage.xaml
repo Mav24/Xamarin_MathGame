@@ -4,28 +4,71 @@
              xmlns:local="clr-namespace:MathHelp"
              x:Class="MathHelp.MainPage">
 
-    <StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label HorizontalOptions="Center"
+                   Text="Math Practice" 
+                   TextColor="Black" 
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout Margin="0,20,0,0">
+
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Set difficulty:" Margin="40,20,0,0"
+                       TextColor="Black" 
+                       FontSize="15"
+                       VerticalTextAlignment="Center"/>
+
+                <Label x:Name="Setting" Margin="10,20,0,0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding Source={x:Reference Difficulty}, Path=Value, StringFormat='Easy'}" />
+            </StackLayout>
+
+            <Slider x:Name="Difficulty" Margin="40,0,40,0" BackgroundColor="Gray" 
+                Minimum="0" Maximum="2"
+                ValueChanged="Difficulty_ValueChanged"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Questions:" 
+                       TextColor="Black"
+                       Margin="40,10,0,0"
+                       FontSize="15" />
+                
+                <Label x:Name="questons" Margin="10,10,0,0"
+                       TextColor="Black"
+                       Text="{Binding Source={x:Reference Game_length}, Path=Value, StringFormat='5'}"/>
+
+            </StackLayout>
+
+            <Slider x:Name="Game_length" Margin="40,0,40,0" BackgroundColor="gray"
+                    ValueChanged="Game_length_ValueChanged"
+                    Minimum="0" Maximum="2"/>
+
         
-        <Label Text="Math Practice" FontSize="50"
-               HorizontalOptions="Center"/>
-        
-        <StackLayout Margin="0,20">
             
-        <Button x:Name="multiplication" Margin="10"
+        <Button x:Name="multiplication" Margin="0,20,0,0"
                 HorizontalOptions="Center"
-                Text="Multiplication" />
+                Text="Multiplication" 
+                Clicked="Multiplication_Clicked"/>
         
         <Button x:Name="division" Margin="10"
                 HorizontalOptions="Center"
-                Text="Division" />
+                Text="Division" 
+                Clicked="Division_Clicked"/>
 
         <Button x:Name="addition" Margin="10"
                 HorizontalOptions="Center"
-                Text="Addition" />
+                Text="Addition" 
+                Clicked="Addition_Clicked"/>
 
         <Button x:Name="subtraction" Margin="10"
                 HorizontalOptions="Center"
-                Text="Subtraction" />
+                Text="Subtraction" 
+                Clicked="Subtraction_Clicked"/>
             
         </StackLayout>
         

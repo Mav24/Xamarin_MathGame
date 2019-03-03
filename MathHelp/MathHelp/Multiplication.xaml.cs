@@ -12,17 +12,27 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Multiplication : ContentPage
 	{
+        private int difficulty;
+        private int numberOfQuestions;
         int firstNumber = 0;
         int secondNumber = 0;
         int rightAnswer = 0;
         int wrongAnswer = 0;
         int gameCount = 1;
         List<string> wrongQuestions = new List<string>();
+        
+        Random num;
 
-        public Multiplication ()
+        public Multiplication (int difficulty, int numberOfQuestions)
 		{
+            this.difficulty = difficulty;
+            this.numberOfQuestions = numberOfQuestions;
 			InitializeComponent ();
             RandomNumber();
+        }
+        public Multiplication()
+        {
+            InitializeComponent();
         }
 
         private void Submit_Clicked(object sender, EventArgs e)
@@ -41,7 +51,6 @@ namespace MathHelp
                 totalRight.Text = $"Correct: {rightAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
             else
@@ -52,36 +61,63 @@ namespace MathHelp
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
                 RandomNumber();
                 answer.Text = "";
-                answer.Focus();
                 gameCount++;
             }
 
         }
 
-        private void RandomNumber()
+        async void RandomNumber()
         {
+            
             //wrongQuestions.Sort();
-            string message = "Question you need to practice:\n";
-
-            if (gameCount == 5)
+            string message = "Questions you need to practice:\n";
+            num = new Random();
+            if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
                 {
                     message += wrongAnswer + "\n";
                 }
-                DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
+                await DisplayAlert("End of Game", $"Correct: {rightAnswer}\n" + $"Wrong: {wrongAnswer}\n" +
                     $"{message}", "OK");
                 totalRight.Text = "";
                 totalWrong.Text = "";
+                await Navigation.PopModalAsync();
             }
             else
             {
-                Random num = new Random();
-                firstNumber = num.Next(2, 10);
-                secondNumber = num.Next(2, 10);
-                question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
-            }
+                switch (difficulty)
+                {
+                    case 0:
+                        firstNumber = num.Next(1, 6);
+                        secondNumber = num.Next(1, 6);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
+                        break;
+                    case 1:
+                        firstNumber = num.Next(3, 10);
+                        secondNumber = num.Next(3, 10);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
+                        break;
+                    case 2:
 
+                        firstNumber = num.Next(5, 13);
+                        secondNumber = num.Next(5, 13);
+                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+
+        }
+
+        private void Exit_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
     }
 }

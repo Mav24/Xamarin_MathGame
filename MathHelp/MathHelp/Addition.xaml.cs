@@ -69,10 +69,7 @@ namespace MathHelp
         {
             string message = "Questions you need to practice:\n";
             num = new Random();
-            //if (numberOfQuestions == 0)
-            //{
-            //    numberOfQuestions = 5;
-            //}
+
             if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
@@ -98,15 +95,17 @@ namespace MathHelp
                         break;
                     case 1:
                         gameCount++;
-                        firstNumber = num.Next(2, 16);
-                        secondNumber = num.Next(2, 16);
+                        firstNumber = num.Next(4, 16);
+                        secondNumber = num.Next(4, 16);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     case 2:
                         gameCount++;
-                        firstNumber = num.Next(2, 21);
-                        secondNumber = num.Next(2, 21);
+                        firstNumber = num.Next(5, 21);
+                        secondNumber = num.Next(5, 21);
                         question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     default:
                         break;

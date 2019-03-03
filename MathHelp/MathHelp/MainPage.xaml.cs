@@ -14,7 +14,9 @@ namespace MathHelp
         public MainPage()
         {
             InitializeComponent();
+            numberOfQuestions = 5;
             Setting.TextColor = Color.Green;
+
         }
 
         private void Multiplication_Clicked(object sender, EventArgs e)
@@ -61,7 +63,24 @@ namespace MathHelp
         private void Game_length_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             numberOfQuestions = (int)e.NewValue;
-            
+            switch (numberOfQuestions)
+            {
+                case 0:
+                    questons.Text = "5";
+                    numberOfQuestions = 5;
+                    break;
+                case 1:
+                    questons.Text = "10";
+                    numberOfQuestions = 10;
+                    break;
+                case 2:
+                    questons.Text = "20";
+                    numberOfQuestions = 20;
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

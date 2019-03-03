@@ -92,8 +92,9 @@ namespace MathHelp
                 switch (difficulty)
                 {
                     case 0:
-                        firstNumber = num.Next(1, 4);
-                        secondNumber = num.Next(1, 4);
+                        firstNumber = num.Next(1, 10);
+                        secondNumber = num.Next(1, 10);
+                        answer.Focus();
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
@@ -103,41 +104,56 @@ namespace MathHelp
                         {
                             do
                             {
-                                firstNumber = num.Next(1, 4);
-                                secondNumber = num.Next(1, 4);
+                                firstNumber = num.Next(1, 10);
+                                secondNumber = num.Next(1, 10);
                                 total = firstNumber / secondNumber;
                                 question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
 
-                            } while (firstNumber % secondNumber == 0);
+                            } while (firstNumber % secondNumber != 0);
                         }
                         break;
                     case 1:
-                        firstNumber = num.Next(2, 9);
-                        secondNumber = num.Next(2, 9);
-                        if (firstNumber < secondNumber)
+                        firstNumber = num.Next(3, 13);
+                        secondNumber = num.Next(3, 13);
+                        answer.Focus();
+                        if (firstNumber % secondNumber == 0)
                         {
-                            question.Text = $"{secondNumber} " + "/" + $" {firstNumber}".ToString();
-                            total = secondNumber / firstNumber;
+                            total = firstNumber / secondNumber;
+                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+                            
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
-                            total = firstNumber / secondNumber;
+                            do
+                            {
+                                firstNumber = num.Next(3, 13);
+                                secondNumber = num.Next(3, 13);
+                                total = firstNumber / secondNumber;
+                                question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+
+                            } while (firstNumber % secondNumber != 0);
                         }
                         break;
                     case 2:
 
-                        firstNumber = num.Next(2, 13);
-                        secondNumber = num.Next(2, 13);
-                        if (firstNumber < secondNumber)
+                        firstNumber = num.Next(4, 15);
+                        secondNumber = num.Next(4, 15);
+                        answer.Focus();
+                        if (firstNumber % secondNumber == 0)
                         {
                             question.Text = $"{secondNumber} " + "/" + $" {firstNumber}".ToString();
                             total = secondNumber / firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
-                            total = firstNumber / secondNumber;
+                            do
+                            {
+                                firstNumber = num.Next(4, 15);
+                                secondNumber = num.Next(4, 15);
+                                total = firstNumber / secondNumber;
+                                question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+
+                            } while (firstNumber % secondNumber != 0);
                         }
                         break;
                     default:

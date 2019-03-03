@@ -72,10 +72,6 @@ namespace MathHelp
             //wrongQuestions.Sort();
             string message = "Questions you need to practice:\n";
             num = new Random();
-            if (numberOfQuestions == 0)
-            {
-                numberOfQuestions = 5;
-            }
             if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
@@ -93,20 +89,23 @@ namespace MathHelp
                 switch (difficulty)
                 {
                     case 0:
-                        firstNumber = num.Next(1, 4);
-                        secondNumber = num.Next(1, 4);
+                        firstNumber = num.Next(1, 6);
+                        secondNumber = num.Next(1, 6);
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     case 1:
-                        firstNumber = num.Next(2, 9);
-                        secondNumber = num.Next(2, 9);
+                        firstNumber = num.Next(3, 10);
+                        secondNumber = num.Next(3, 10);
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     case 2:
 
-                        firstNumber = num.Next(2, 13);
-                        secondNumber = num.Next(2, 13);
+                        firstNumber = num.Next(5, 13);
+                        secondNumber = num.Next(5, 13);
                         question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        answer.Focus();
                         break;
                     default:
                         break;

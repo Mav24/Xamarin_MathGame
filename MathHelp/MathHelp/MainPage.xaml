@@ -38,14 +38,15 @@
                        Margin="40,10,0,0"
                        FontSize="15" />
                 
-                <Label Margin="10,10,0,0"
-                       Text="{Binding Source={x:Reference Game_length}, Path=Value}"/>
+                <Label x:Name="questons" Margin="10,10,0,0"
+                       TextColor="Black"
+                       Text="{Binding Source={x:Reference Game_length}, Path=Value, StringFormat='5'}"/>
 
             </StackLayout>
 
             <Slider x:Name="Game_length" Margin="40,0,40,0" BackgroundColor="gray"
                     ValueChanged="Game_length_ValueChanged"
-                    Maximum="20" Minimum="5"/>
+                    Minimum="0" Maximum="2"/>
 
         
             

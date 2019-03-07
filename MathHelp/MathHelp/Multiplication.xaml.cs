@@ -55,7 +55,7 @@ namespace MathHelp
             }
             else
             {
-                wrongQuestions.Add(question.Text);
+                //wrongQuestions.Add(question.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
@@ -91,20 +91,23 @@ namespace MathHelp
                     case 0:
                         firstNumber = num.Next(1, 6);
                         secondNumber = num.Next(1, 6);
-                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = "X" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 1:
                         firstNumber = num.Next(3, 10);
                         secondNumber = num.Next(3, 10);
-                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = "X" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 2:
 
                         firstNumber = num.Next(5, 13);
                         secondNumber = num.Next(5, 13);
-                        question.Text = $"{firstNumber} " + "X" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = "X" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     default:
@@ -118,6 +121,25 @@ namespace MathHelp
         private void Exit_Clicked(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
+        }
+
+        private void OnSelectNumber_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            string pressed = button.Text;
+
+            if (pressed.Length < 2)
+            {
+                answer.Text += pressed;
+            }
+            else
+            {
+                DisplayAlert("test", "test", "Ok");
+            }
+            
+
+           
         }
     }
 }

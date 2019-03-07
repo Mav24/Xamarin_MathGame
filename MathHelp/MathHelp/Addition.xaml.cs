@@ -12,6 +12,7 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Addition : ContentPage
 	{
+        private static string plus = "\u002B";
         private int difficulty;
         private int numberOfQuestions;
         int firstNumber = 0;
@@ -90,21 +91,21 @@ namespace MathHelp
                         gameCount++;
                         firstNumber = num.Next(1, 11);
                         secondNumber = num.Next(1, 11);
-                        question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 1:
                         gameCount++;
                         firstNumber = num.Next(4, 16);
                         secondNumber = num.Next(4, 16);
-                        question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 2:
                         gameCount++;
                         firstNumber = num.Next(5, 21);
                         secondNumber = num.Next(5, 21);
-                        question.Text = $"{firstNumber} " + "+" + $" {secondNumber}".ToString();
+                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     default:

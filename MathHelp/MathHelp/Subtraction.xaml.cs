@@ -12,6 +12,8 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Subtraction : ContentPage
 	{
+
+        private static string minus = "\u2212";
         private int difficulty;
         private int numberOfQuestions;
         int firstNumber = 0;
@@ -66,12 +68,12 @@ namespace MathHelp
                         secondNumber = num.Next(1, 11);
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber}" + "-" + $"{firstNumber}".ToString();
+                            question.Text = $"{secondNumber} " + $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "-" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} " + $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;
@@ -80,12 +82,12 @@ namespace MathHelp
                         secondNumber = num.Next(2, 16);
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber}" + "-" + $"{firstNumber}".ToString();
+                            question.Text = $"{secondNumber} " + $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "-" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} " + $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;
@@ -95,12 +97,12 @@ namespace MathHelp
                         secondNumber = num.Next(2, 21);
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber}" + "-" + $"{firstNumber}".ToString();
+                            question.Text = $"{secondNumber} " + $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} " + "-" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} " + $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;

@@ -12,6 +12,7 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Division : ContentPage
 	{
+        private static string divide = "\u00F7";
         private int difficulty;
         private int numberOfQuestions;
         int firstNumber = 0;
@@ -98,7 +99,7 @@ namespace MathHelp
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
-                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} " + $"{divide}" + $" {secondNumber}".ToString();
                         }
                         else
                         {
@@ -107,7 +108,7 @@ namespace MathHelp
                                 firstNumber = num.Next(1, 10);
                                 secondNumber = num.Next(1, 10);
                                 total = firstNumber / secondNumber;
-                                question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+                                question.Text = $"{firstNumber} " + $"{divide}" + $" {secondNumber}".ToString();
 
                             } while (firstNumber % secondNumber != 0);
                         }
@@ -119,7 +120,7 @@ namespace MathHelp
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
-                            question.Text = $"{firstNumber} " + "/" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} " + $"{divide}" + $" {secondNumber}".ToString();
                             
                         }
                         else

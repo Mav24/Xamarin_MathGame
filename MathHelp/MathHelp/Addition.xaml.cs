@@ -56,7 +56,7 @@ namespace MathHelp
             }
             else
             {
-                wrongQuestions.Add(question.Text);
+               // wrongQuestions.Add(question.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
@@ -91,21 +91,24 @@ namespace MathHelp
                         gameCount++;
                         firstNumber = num.Next(1, 11);
                         secondNumber = num.Next(1, 11);
-                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 1:
                         gameCount++;
                         firstNumber = num.Next(4, 16);
                         secondNumber = num.Next(4, 16);
-                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 2:
                         gameCount++;
                         firstNumber = num.Next(5, 21);
                         secondNumber = num.Next(5, 21);
-                        question.Text = $"{firstNumber} " + $"{plus}" + $" {secondNumber}".ToString();
+                        num1.Text = $"{firstNumber}".ToString();
+                        num2.Text = $"{plus}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     default:

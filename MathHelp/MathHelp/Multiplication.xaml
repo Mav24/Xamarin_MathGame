@@ -9,74 +9,72 @@
                Text="Multiplication"
                TextColor="Black"
                Margin="0,15,0,0"
-               FontSize="20" />            
+               FontSize="20" />
         </StackLayout>
-        
+
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Exit" Text="Exit" Order="Default"
                      Clicked="Exit_Clicked"/>
     </ContentPage.ToolbarItems>
-    
-    
-    <ContentPage.Content>
-        
-        <StackLayout>
-                <Label x:Name="totalRight" FontSize="25" Text=""/>
-                <Label x:Name="totalWrong" FontSize="25" Text="" />
 
-            <StackLayout>
-                <Frame HasShadow="True" BackgroundColor="Red"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="0,10,0,0">
+            <Label x:Name="totalRight" FontSize="25" Text=""/>
+            <Label x:Name="totalWrong" FontSize="25" Text="" />
+
+            <Frame Margin="30,0,30,0">
                 <Grid HorizontalOptions="Center" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="2" />
                         <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
                     <!--First Row-->
-                    <Grid BackgroundColor="Aqua" Grid.Row="0" Grid.Column="1">
-                        <Label x:Name="num1" Margin="0,0,50,0" HorizontalTextAlignment="End" 
-                       FontSize="50"
-                       Text=""/>
-                        </Grid>
-                    
-                    <!--Second Row-->
-                        <Grid BackgroundColor="Blue" Grid.Row="1" Grid.Column="1">
-                            <Label x:Name="num2" Margin="0,0,50,0" HorizontalTextAlignment="End" 
-                       FontSize="50"
-                       Text=""/>
-                        </Grid>
-                    
-                    <!--Third Row-->
-                        <Grid BackgroundColor="Azure" Grid.Row="2" Grid.ColumnSpan="2">
-                            <BoxView HeightRequest="1" 
-                         HorizontalOptions="FillAndExpand" />
-                        </Grid>
-                    
-                    <!--Fouth Row-->
-                        <Grid BackgroundColor="Bisque" Grid.Row="3" Grid.Column="1">
-                            
-                            <Label x:Name="answer" Margin="0,0,50,0"
-                           FontSize="50" HorizontalTextAlignment="End"
-                           Text=""/>
-                        </Grid>
-                
-                    
-
-
-                        
+                    <Grid Grid.Row="0" Grid.Column="1" Padding="0,0,10,0">
+                        <Label x:Name="num1" Margin="0,0,0,0" HorizontalTextAlignment="End" 
+                         FontSize="30"
+                         Text=""/>
                     </Grid>
-                </Frame>
-            </StackLayout>
-            
-            <StackLayout Margin="0,0,0,0">
+
+                    <!--Second Row-->
+                    <Grid Grid.Row="1" Grid.Column="1" Padding="0,0,10,0">
+                        <Label x:Name="num2" Margin="0,0,0,0" HorizontalTextAlignment="End" 
+                        FontSize="30"
+                       Text=""/>
+                    </Grid>
+
+                    <!--Third Row-->
+                    <Grid BackgroundColor="Accent" Grid.Row="2" Grid.Column="1">
+                        <BoxView HeightRequest="1" 
+                         HorizontalOptions="End" />
+                    </Grid>
+
+                    <!--Fouth Row-->
+                    <Grid Grid.Row="3" Grid.Column="1" Padding="0,0,0,0">
+                        <Entry x:Name="answer" FontSize="30" Keyboard="Numeric" HorizontalTextAlignment="End" />
+                        <!--<Label x:Name="answer" Margin="0,0,0,0"
+                              FontSize="40" HorizontalTextAlignment="End"
+                              Text=""/>-->
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.Column="1">
+                        <Button x:Name="Enter" Text="Enter" Clicked="Submit_Clicked" />
+                    </Grid>
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <!--<StackLayout BackgroundColor="Blue" VerticalOptions="CenterAndExpand" Margin="0,20,0,0">
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -102,13 +100,14 @@
                     <Button Text="" Grid.Row="3" Grid.Column="0" Clicked="OnSelectNumber_Clicked"/>
                     <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnSelectNumber_Clicked"/>
                     <Button Text="" Grid.Row="3" Grid.Column="2" />
-                    <Button Text="Del" Grid.RowSpan="2" Grid.Column="3" />
+                    <Button Text="Del" Grid.RowSpan="2" Grid.Column="3" Clicked="Delete_Clicked" />
                     <Button Text="Done" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" />
                 </Grid>
-            </StackLayout>
+                
+            </StackLayout>-->
 
-        </StackLayout>
-        
+
+
 
         <!--<StackLayout>
             
@@ -141,5 +140,5 @@
 
         </StackLayout>-->
     </ContentPage.Content>
-    
+
 </ContentPage>

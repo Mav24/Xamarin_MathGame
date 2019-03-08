@@ -12,6 +12,7 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Multiplication : ContentPage
 	{
+        int count = 0;
         private int difficulty;
         private int numberOfQuestions;
         int firstNumber = 0;
@@ -125,13 +126,16 @@ namespace MathHelp
 
         private void OnSelectNumber_Clicked(object sender, EventArgs e)
         {
+            count++;
             Button button = (Button)sender;
-
+            
             string pressed = button.Text;
+            
 
-            if (pressed.Length < 2)
+            if (count != 3)
             {
                 answer.Text += pressed;
+                
             }
             else
             {

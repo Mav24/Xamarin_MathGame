@@ -64,16 +64,16 @@ namespace MathHelp
                         answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber} {minus} {firstNumber} =";
-                            //num1.Text = $"{secondNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            //question.Text = $"{secondNumber} {minus} {firstNumber} =";
+                            num1.Text = $"{secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} {minus} {secondNumber} =";
-                            //num1.Text = $"{firstNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {secondNumber}".ToString();
+                            //question.Text = $"{firstNumber} {minus} {secondNumber} =";
+                            num1.Text = $"{firstNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;
@@ -83,16 +83,16 @@ namespace MathHelp
                         answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber} {minus} {firstNumber} =";
-                            //num1.Text = $" {secondNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            //question.Text = $"{secondNumber} {minus} {firstNumber} =";
+                            num1.Text = $" {secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} {minus} {secondNumber} =";
-                            //num1.Text = $"{firstNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {secondNumber}".ToString();
+                            //question.Text = $"{firstNumber} {minus} {secondNumber} =";
+                            num1.Text = $"{firstNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;
@@ -103,16 +103,16 @@ namespace MathHelp
                         answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            question.Text = $"{secondNumber} {minus} {firstNumber} =";
-                            //num1.Text = $" {secondNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            //question.Text = $"{secondNumber} {minus} {firstNumber} =";
+                            num1.Text = $" {secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
                         {
-                            question.Text = $"{firstNumber} {minus} {secondNumber} =";
-                            //num1.Text = $"{firstNumber}".ToString();
-                            //num2.Text = $"{minus}" + $" {secondNumber}".ToString();
+                            //question.Text = $"{firstNumber} {minus} {secondNumber} =";
+                            num1.Text = $"{firstNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {secondNumber}".ToString();
                             total = firstNumber - secondNumber;
                         }
                         break;
@@ -141,7 +141,7 @@ namespace MathHelp
             else
             {
                 
-                wrongQuestions.Add(question.Text);
+                wrongQuestions.Add(num1.Text + " " + num2.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";

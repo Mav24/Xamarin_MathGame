@@ -56,7 +56,7 @@ namespace MathHelp
             }
             else
             {
-               // wrongQuestions.Add(question.Text);
+                wrongQuestions.Add(num1.Text + " " + num2.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";

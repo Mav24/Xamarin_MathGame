@@ -20,35 +20,41 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="totalRight"
-                   Margin="0,0,0,5"
-                   Text=""
-                   FontSize="25"
-                   HorizontalOptions="Start" />
+        <StackLayout Padding="0,10,0,0" BackgroundColor="#274C77">
+            <Label x:Name="totalRight" FontSize="25" Text=""/>
+            <Label x:Name="totalWrong" FontSize="25" Text="" />
 
-            <Label x:Name="totalWrong"
-                   Margin="0,0,0,5"
-                   FontSize="25"
-                   HorizontalOptions="Start" />
+            <Frame Margin="30,0,30,0" BackgroundColor="#3A5C83">
+                <Grid HorizontalOptions="Center" Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <Label x:Name="question"
-                   Margin="0,0,0,0"
-                   FontSize="75"
-                   Text=""
-                   HorizontalOptions="Center"
-                   VerticalTextAlignment="Center" />
+                    <!--First Row-->
+                    <Grid Grid.Row="0" Grid.Column="1" Padding="0,10,10,0">
+                        <Label x:Name="question" Margin="0,0,0,0" HorizontalTextAlignment="Center" 
+                         FontSize="30"
+                         Text=""/>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="2" Padding="0,0,10,0">
+                        <Entry x:Name="answer" FontSize="30" Keyboard="Numeric"/>
+                    </Grid>
+                    <!-- Second Row -->
+                    <Grid Grid.Row="1" Grid.ColumnSpan="3" Padding="0,0,10,0">
+                        <Button x:Name="enter" BackgroundColor="#1976D2" Text="Enter" Clicked="Submit_Clicked" />
+                    </Grid>
 
-            <Entry x:Name="answer"
-                   Keyboard="Numeric"
-                   VerticalOptions="Center"
-                   Margin="20,0,20,0" />
+                    
 
-            <Button x:Name="submit"
-                    Margin="20"
-                    Text="Submit"
-                    Clicked="Submit_Clicked" />
-
+                </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

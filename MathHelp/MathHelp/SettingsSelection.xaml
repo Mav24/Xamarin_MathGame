@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathHelp.SettingsSelection">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#274C77">
+
+            <Frame HorizontalOptions="Center" Margin="40" BackgroundColor="#3A5C83">
+                <Label Text="Game settings!" TextColor="#E7ECEF" FontSize="25" HorizontalOptions="CenterAndExpand" />
+            </Frame>
+
+            <StackLayout VerticalOptions="Center" Margin="40,40" Padding="0,0,0,0">
+                <Button x:Name="Easy" BackgroundColor="#A3CEF1" Text="Easy" TextColor="Green" Clicked="Easy_Clicked" />
+                <Button x:Name="Medium" BackgroundColor="#A3CEF1" Text="Medium" TextColor="Yellow" Clicked="Medium_Clicked" />
+                <Button x:Name="Hard" BackgroundColor="#A3CEF1" Text="Hard" TextColor="Red" Clicked="Hard_Clicked" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

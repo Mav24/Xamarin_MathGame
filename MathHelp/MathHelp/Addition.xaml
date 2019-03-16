@@ -59,9 +59,7 @@
                     <!--Fouth Row-->
                     <Grid Grid.Row="3" Grid.Column="1" Padding="0,0,0,0">
                         <Entry x:Name="answer" FontSize="30" Keyboard="Numeric" HorizontalTextAlignment="End" />
-                        <!--<Label x:Name="answer" Margin="0,0,0,0"
-                              FontSize="40" HorizontalTextAlignment="End"
-                              Text=""/>-->
+                       
                     </Grid>
                     <Grid Grid.Row="4" Grid.Column="1">
                         <Button x:Name="Enter" BackgroundColor="#1976D2" Text="Enter" Clicked="Submit_Clicked" />

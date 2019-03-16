@@ -56,7 +56,7 @@ namespace MathHelp
             }
             else
             {
-                //wrongQuestions.Add(question.Text);
+                wrongQuestions.Add(question.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
@@ -71,10 +71,6 @@ namespace MathHelp
         {
             string message = "Questions you need to practice:\n";
             num = new Random();
-            if (numberOfQuestions == 0)
-            {
-                numberOfQuestions = 5;
-            }
             if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
@@ -99,8 +95,9 @@ namespace MathHelp
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
-                            num1.Text = $"{firstNumber}".ToString();
-                            num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                            //num1.Text = $"{firstNumber}".ToString();
+                            //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
                         }
                         else
                         {
@@ -109,8 +106,9 @@ namespace MathHelp
                                 firstNumber = num.Next(1, 10);
                                 secondNumber = num.Next(1, 10);
                                 total = firstNumber / secondNumber;
-                                num1.Text = $"{firstNumber}".ToString();
-                                num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                                question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                                //num1.Text = $"{firstNumber}".ToString();
+                                //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
 
                             } while (firstNumber % secondNumber != 0);
                         }
@@ -122,8 +120,9 @@ namespace MathHelp
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
-                            num1.Text = $"{firstNumber}".ToString();
-                            num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                            //num1.Text = $"{firstNumber}".ToString();
+                            //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
 
                         }
                         else
@@ -133,8 +132,9 @@ namespace MathHelp
                                 firstNumber = num.Next(1, 10);
                                 secondNumber = num.Next(1, 10);
                                 total = firstNumber / secondNumber;
-                                num1.Text = $"{firstNumber}".ToString();
-                                num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                                question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                                //num1.Text = $"{firstNumber}".ToString();
+                                //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
 
                             } while (firstNumber % secondNumber != 0);
                         }
@@ -147,8 +147,9 @@ namespace MathHelp
                         if (firstNumber % secondNumber == 0)
                         {
                             total = firstNumber / secondNumber;
-                            num1.Text = $"{firstNumber}".ToString();
-                            num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                            question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                            //num1.Text = $"{firstNumber}".ToString();
+                            //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
                         }
                         else
                         {
@@ -157,8 +158,9 @@ namespace MathHelp
                                 firstNumber = num.Next(1, 10);
                                 secondNumber = num.Next(1, 10);
                                 total = firstNumber / secondNumber;
-                                num1.Text = $"{firstNumber}".ToString();
-                                num2.Text = $"{divide}" + $" {secondNumber}".ToString();
+                                question.Text = $"{firstNumber} {divide} {secondNumber} =";
+                                //num1.Text = $"{firstNumber}".ToString();
+                                //num2.Text = $"{divide}" + $" {secondNumber}".ToString();
 
                             } while (firstNumber % secondNumber != 0);
                         }

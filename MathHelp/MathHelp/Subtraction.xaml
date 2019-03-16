@@ -20,11 +20,11 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Padding="0,10,0,0">
+        <StackLayout Padding="0,10,0,0" BackgroundColor="#274C77">
             <Label x:Name="totalRight" FontSize="25" Text=""/>
             <Label x:Name="totalWrong" FontSize="25" Text="" />
 
-            <Frame Margin="30,0,30,0">
+            <Frame Margin="30,0,30,0" BackgroundColor="#3A5C83">
                 <Grid HorizontalOptions="Center" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

@@ -20,53 +20,38 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Padding="0,10,0,0">
+        <StackLayout Padding="0,10,0,0" BackgroundColor="#274C77">
             <Label x:Name="totalRight" FontSize="25" Text=""/>
             <Label x:Name="totalWrong" FontSize="25" Text="" />
 
-            <Frame Margin="30,0,30,0">
+            <Frame Margin="30,0,30,0" BackgroundColor="#3A5C83">
                 <Grid HorizontalOptions="Center" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="2" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <!--First Row-->
-                    <Grid Grid.Row="0" Grid.Column="1" Padding="0,0,10,0">
-                        <Label x:Name="num1" Margin="0,0,0,0" HorizontalTextAlignment="End" 
+                    <Grid Grid.Row="0" Grid.Column="1" Padding="0,10,10,0">
+                        <Label x:Name="question" Margin="0,0,0,0" HorizontalTextAlignment="Center" 
                          FontSize="30"
                          Text=""/>
                     </Grid>
-
-                    <!--Second Row-->
-                    <Grid Grid.Row="1" Grid.Column="1" Padding="0,0,10,0">
-                        <Label x:Name="num2" Margin="0,0,0,0" HorizontalTextAlignment="End" 
-                        FontSize="30"
-                       Text=""/>
+                    <Grid Grid.Row="0" Grid.Column="2" Padding="0,0,10,0">
+                        <Entry x:Name="answer" FontSize="30" Keyboard="Numeric"/>
+                    </Grid>
+                    <!-- Second Row -->
+                    <Grid Grid.Row="1" Grid.ColumnSpan="3" Padding="0,0,10,0">
+                        <Button x:Name="enter" Text="Enter" Clicked="Submit_Clicked" />
                     </Grid>
 
-                    <!--Third Row-->
-                    <Grid BackgroundColor="Accent" Grid.Row="2" Grid.Column="1">
-                        <BoxView HeightRequest="1" 
-                         HorizontalOptions="End" />
-                    </Grid>
-
-                    <!--Fouth Row-->
-                    <Grid Grid.Row="3" Grid.Column="1" Padding="0,0,0,0">
-                        <Entry x:Name="answer" FontSize="30" Keyboard="Numeric" HorizontalTextAlignment="End" />
-                        <!--<Label x:Name="answer" Margin="0,0,0,0"
-                              FontSize="40" HorizontalTextAlignment="End"
-                              Text=""/>-->
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="1">
-                        <Button x:Name="Enter" Text="Enter" Clicked="Submit_Clicked" />
-                    </Grid>
+                    
 
                 </Grid>
             </Frame>

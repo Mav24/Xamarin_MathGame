@@ -13,65 +13,131 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout Margin="0,20,0,0">
+    <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" BackgroundColor="#274C77">
 
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-
-                <Label Text="Set difficulty:" Margin="40,20,0,0"
-                       TextColor="Black" 
-                       FontSize="15"
-                       VerticalTextAlignment="Center"/>
-
-                <Label x:Name="Setting" Margin="10,20,0,0"
-                       VerticalTextAlignment="Center"
-                       Text="{Binding Source={x:Reference Difficulty}, Path=Value, StringFormat='Easy'}" />
-            </StackLayout>
-
-            <Slider x:Name="Difficulty" Margin="40,0,40,0" BackgroundColor="Gray" 
-                Minimum="0" Maximum="2"
-                ValueChanged="Difficulty_ValueChanged"/>
-
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Number of Questions:" 
-                       TextColor="Black"
-                       Margin="40,10,0,0"
-                       FontSize="15" />
-                
-                <Label x:Name="questons" Margin="10,10,0,0"
-                       TextColor="Black"
-                       Text="{Binding Source={x:Reference Game_length}, Path=Value, StringFormat='5'}"/>
-
-            </StackLayout>
-
-            <Slider x:Name="Game_length" Margin="40,0,40,0" BackgroundColor="gray"
-                    ValueChanged="Game_length_ValueChanged"
-                    Minimum="0" Maximum="2"/>
-
+        <Frame Margin="40" BackgroundColor="#3A5C83">
+            <Label Text="Select game mode!" Margin="0,0,0,0" TextColor="#E7ECEF" FontSize="25" HorizontalOptions="CenterAndExpand"/>
+        </Frame>
         
-            
-        <Button x:Name="multiplication" Margin="0,20,0,0"
-                HorizontalOptions="Center"
-                Text="Multiplication" 
-                Clicked="Multiplication_Clicked"/>
-        
-        <Button x:Name="division" Margin="10"
+        <StackLayout VerticalOptions="Center" Margin="40">
+            <!--First Row-->
+            <Grid ColumnSpacing="20" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--First Row-->
+                <Grid Grid.Row="0" Grid.Column="0" Padding="10" BackgroundColor="blue">
+                    <ImageButton Source="plus.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="60"
+                             HeightRequest="60"
+                             Clicked="Addition_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="Green">
+                    <ImageButton Source="minus.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="48"
+                             HeightRequest="48"
+                             Clicked="Subtraction_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+
+                </Grid>
+
+                <!--Second Row-->
+                <Grid Grid.Row="1" Grid.Column="0" Padding="10" BackgroundColor="Yellow">
+                    <ImageButton Source="multiply.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="48"
+                             HeightRequest="48"
+                             Clicked="Multiplication_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1" Padding="10" BackgroundColor="Brown">
+                    <ImageButton Source="divide.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="48"
+                             HeightRequest="48"
+                             Clicked="Division_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <!--<Button x:Name="division" Margin="0"
                 HorizontalOptions="Center"
                 Text="Division" 
-                Clicked="Division_Clicked"/>
+                Clicked="Division_Clicked"/>-->
+                </Grid>
 
-        <Button x:Name="addition" Margin="10"
-                HorizontalOptions="Center"
-                Text="Addition" 
-                Clicked="Addition_Clicked"/>
-
-        <Button x:Name="subtraction" Margin="10"
-                HorizontalOptions="Center"
-                Text="Subtraction" 
-                Clicked="Subtraction_Clicked"/>
-            
+            </Grid>
         </StackLayout>
         
+
     </StackLayout>
 
 </ContentPage>

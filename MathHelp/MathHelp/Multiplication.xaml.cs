@@ -12,7 +12,7 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Multiplication : ContentPage
 	{
-        int count = 0;
+        private static string multiple = "\u00D7";
         private int difficulty;
         private int numberOfQuestions;
         int firstNumber = 0;
@@ -56,7 +56,7 @@ namespace MathHelp
             }
             else
             {
-                //wrongQuestions.Add(question.Text);
+                wrongQuestions.Add(num1.Text + " " + num2.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";
@@ -93,14 +93,15 @@ namespace MathHelp
                         firstNumber = num.Next(1, 6);
                         secondNumber = num.Next(1, 6);
                         num1.Text = $"{firstNumber}".ToString();
-                        num2.Text = "X" + $" {secondNumber}".ToString();
+                        num2.Text = $"{multiple}" + $" {secondNumber}".ToString();
+                        
                         answer.Focus();
                         break;
                     case 1:
-                        firstNumber = num.Next(3, 10);
-                        secondNumber = num.Next(3, 10);
+                        firstNumber = num.Next(3, 11);
+                        secondNumber = num.Next(3, 11);
                         num1.Text = $"{firstNumber}".ToString();
-                        num2.Text = "X" + $" {secondNumber}".ToString();
+                        num2.Text = $"{multiple}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     case 2:
@@ -108,7 +109,7 @@ namespace MathHelp
                         firstNumber = num.Next(5, 13);
                         secondNumber = num.Next(5, 13);
                         num1.Text = $"{firstNumber}".ToString();
-                        num2.Text = "X" + $" {secondNumber}".ToString();
+                        num2.Text = $"{multiple}" + $" {secondNumber}".ToString();
                         answer.Focus();
                         break;
                     default:
@@ -122,28 +123,6 @@ namespace MathHelp
         private void Exit_Clicked(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
-        }
-
-        private void OnSelectNumber_Clicked(object sender, EventArgs e)
-        {
-            count++;
-            Button button = (Button)sender;
-            
-            string pressed = button.Text;
-            
-
-            if (count != 3)
-            {
-                answer.Text += pressed;
-                
-            }
-            else
-            {
-                DisplayAlert("test", "test", "Ok");
-            }
-            
-
-           
         }
     }
 }

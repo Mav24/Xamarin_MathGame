@@ -36,17 +36,12 @@ namespace MathHelp
         public Subtraction ()
 		{
 			InitializeComponent ();
-            RandomNumber();
 		}
         
         async void RandomNumber()
         {
             string message = "Questions you need to practice:\n";
             num = new Random();
-            if (numberOfQuestions == 0)
-            {
-                numberOfQuestions = 5;
-            }
             if (gameCount == numberOfQuestions)
             {
                 foreach (var wrongAnswer in wrongQuestions)
@@ -66,10 +61,11 @@ namespace MathHelp
                     case 0:
                         firstNumber = num.Next(1, 11);
                         secondNumber = num.Next(1, 11);
+                        answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            num2.Text = $"{secondNumber}".ToString(); ;
-                            num1.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            num1.Text = $"{secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
@@ -82,10 +78,11 @@ namespace MathHelp
                     case 1:
                         firstNumber = num.Next(2, 16);
                         secondNumber = num.Next(2, 16);
+                        answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            num2.Text = $"{secondNumber}".ToString(); ;
-                            num1.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            num1.Text = $" {secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
@@ -99,10 +96,11 @@ namespace MathHelp
 
                         firstNumber = num.Next(2, 21);
                         secondNumber = num.Next(2, 21);
+                        answer.Focus();
                         if (firstNumber < secondNumber)
                         {
-                            num2.Text = $"{secondNumber}".ToString(); ;
-                            num1.Text = $"{minus}" + $" {firstNumber}".ToString();
+                            num1.Text = $" {secondNumber}".ToString();
+                            num2.Text = $"{minus}" + $" {firstNumber}".ToString();
                             total = secondNumber - firstNumber;
                         }
                         else
@@ -136,7 +134,8 @@ namespace MathHelp
             }
             else
             {
-                //wrongQuestions.Add(question.Text);
+                
+                wrongQuestions.Add(num1.Text + " " + num2.Text);
                 wrongAnswer++;
                 totalWrong.TextColor = Color.Red;
                 totalWrong.Text = $"Wrong: {wrongAnswer}";

@@ -48,7 +48,7 @@
                     </Grid>
                     <!-- Second Row -->
                     <Grid Grid.Row="1" Grid.ColumnSpan="3" Padding="0,0,10,0">
-                        <Button x:Name="enter" Text="Enter" Clicked="Submit_Clicked" />
+                        <Button x:Name="enter" BackgroundColor="#1976D2" Text="Enter" Clicked="Submit_Clicked" />
                     </Grid>
 
                     

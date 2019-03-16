@@ -51,7 +51,7 @@
                     </Grid>
 
                     <!--Third Row-->
-                    <Grid BackgroundColor="Accent" Grid.Row="2" Grid.Column="1">
+                    <Grid BackgroundColor="Black" Grid.Row="2" Grid.Column="1">
                         <BoxView HeightRequest="1" 
                          HorizontalOptions="End" />
                     </Grid>
@@ -64,7 +64,7 @@
                               Text=""/>-->
                     </Grid>
                     <Grid Grid.Row="4" Grid.Column="1">
-                        <Button x:Name="Enter" Text="Enter" Clicked="Submit_Clicked" />
+                        <Button x:Name="Enter" BackgroundColor="#1976D2" Text="Enter" Clicked="Submit_Clicked" />
                     </Grid>
 
                 </Grid>

@@ -31,6 +31,8 @@ namespace MathHelp
             this.numberOfQuestions = numberOfQuestions;
             InitializeComponent();
             RandomNumber();
+
+            answer.Completed += Submit_Clicked;
         }
 
         public Subtraction ()

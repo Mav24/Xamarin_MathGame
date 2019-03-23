@@ -29,9 +29,13 @@ namespace MathHelp
             this.difficulty = difficulty;
             this.numberOfQuestions = numberOfQuestions;
             RandomNumber();
-			
-		}
-        public Addition ()
+
+            answer.Completed += Submit_Clicked;
+            
+
+        }
+
+        public Addition()
         {
             InitializeComponent();
         }

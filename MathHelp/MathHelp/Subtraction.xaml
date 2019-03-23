@@ -21,19 +21,22 @@
     
     <ContentPage.Content>
         <StackLayout Padding="0,10,0,0" BackgroundColor="#274C77">
-            <Label x:Name="totalRight" FontSize="25" Text=""/>
-            <Label x:Name="totalWrong" FontSize="25" Text="" />
+            
+            <StackLayout Margin="10,0,0,0" HorizontalOptions="Center" Orientation="Horizontal">
+                <Label x:Name="totalRight" Margin="0,0,0,0" FontSize="20" Text=""/>
+                <Label x:Name="totalWrong" Margin="30,0,0,0" FontSize="20" Text="" />
+            </StackLayout>
 
             <Frame Margin="30,0,30,0" BackgroundColor="#3A5C83">
                 <Grid HorizontalOptions="Center" Margin="0,0,0,0">
 
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="2" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

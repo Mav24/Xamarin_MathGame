@@ -1,0 +1,5 @@
+﻿
+
+Oct 27 2019
+- Updated design of Multiplications, Division, subtraction pages
+**TODO need to look in to having the numbers over top of each other for addition and multipication***

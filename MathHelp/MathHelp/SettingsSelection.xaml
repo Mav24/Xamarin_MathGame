@@ -2,7 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathHelp.SettingsSelection">
-    
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label x:Name="title" HorizontalOptions="Center"
+                   Text="" 
+                   TextColor="Black" 
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="cancel" Text="Cancel"
+                     Clicked="Cancel_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout BackgroundColor="#274C77">
 

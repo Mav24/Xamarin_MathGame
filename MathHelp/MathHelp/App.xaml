@@ -3,6 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathHelp.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="BackgroundColor" Value="#274C77"/>
+                <Setter Property="BorderColor" Value="#3B74B6"/>
+                <Setter Property="BorderWidth" Value="1"/>
+            </Style>
 
+            <Style x:Key="otherButtons" TargetType="Button" BasedOn="{StaticResource button}">
+                <Setter Property="BackgroundColor" Value="Orange"/>
+            </Style>
+
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

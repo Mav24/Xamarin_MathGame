@@ -21,24 +21,25 @@ namespace MathHelp
 
         private void Multiplication_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(3)));
+            //Navigation.PushModalAsync(new NavigationPage(new NewDesignLook()));
+            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(3, "Multiplication")));
         }
 
         private void Division_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(4)));
+            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(4, "Division")));
             //Navigation.PushModalAsync(new NavigationPage(new Division(difficulty, numberOfQuestions)));
         }
 
         private void Addition_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(2)));
+            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(2, "Addition")));
             //Navigation.PushModalAsync(new NavigationPage(new Addition(difficulty, numberOfQuestions)));   
         }
 
         private void Subtraction_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(1)));
+            Navigation.PushModalAsync(new NavigationPage(new SettingsSelection(1, "Subtraction")));
             //Navigation.PushModalAsync(new NavigationPage(new Subtraction(difficulty, numberOfQuestions)));
         }
 

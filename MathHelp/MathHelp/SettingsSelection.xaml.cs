@@ -12,11 +12,12 @@ namespace MathHelp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingsSelection : ContentPage
 	{
-        private int gameType;
-		public SettingsSelection (int gameType)
+        private readonly int gameType;
+		public SettingsSelection (int gameType, string pageTitle)
 		{
 			InitializeComponent ();
             this.gameType = gameType;
+            title.Text = pageTitle;
 		}
 
         private void Easy_Clicked(object sender, EventArgs e)
@@ -80,6 +81,12 @@ namespace MathHelp
                 default:
                     break;
             }
+        }
+
+        private void Cancel_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+            
         }
     }
 }

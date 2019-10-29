@@ -19,60 +19,69 @@
                      Clicked="Exit_Clicked" />
     </ContentPage.ToolbarItems>
     
-    <ContentPage.Content>
-        <StackLayout Padding="0,10,0,0" BackgroundColor="#274C77">
+        
+        <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="#274C77">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             
-            <StackLayout Margin="10,0,0,0" HorizontalOptions="Center" Orientation="Horizontal">
-                <Label x:Name="totalRight" Margin="0,0,0,0" FontSize="20" Text=""/>
-                <Label x:Name="totalWrong" Margin="30,0,0,0" FontSize="20" Text="" />
-            </StackLayout>
-
-            <Frame Margin="30,0,30,0" BackgroundColor="#3A5C83">
-                <Grid HorizontalOptions="Center" Margin="0,0,0,0">
-
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="2" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <!--First Row-->
-                    <Grid Grid.Row="0" Grid.Column="1" Padding="0,0,10,0">
-                        <Label x:Name="num1" Margin="0,0,0,0" HorizontalTextAlignment="End" 
-                         FontSize="30"
-                         Text=""/>
-                    </Grid>
-
-                    <!--Second Row-->
-                    <Grid Grid.Row="1" Grid.Column="1" Padding="0,0,10,0">
-                        <Label x:Name="num2" Margin="0,0,0,0" HorizontalTextAlignment="End" 
-                        FontSize="30"
-                       Text=""/>
-                    </Grid>
-
-                    <!--Third Row-->
-                    <Grid BackgroundColor="Black" Grid.Row="2" Grid.Column="1">
-                        <BoxView HeightRequest="1" 
-                         HorizontalOptions="End" />
-                    </Grid>
-
-                    <!--Fouth Row-->
-                    <Grid Grid.Row="3" Grid.Column="1" Padding="0,0,0,0">
-                        <Entry x:Name="answer" FontSize="30" Keyboard="Numeric" HorizontalTextAlignment="End" />
-                        
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="1">
-                        <Button x:Name="Enter" BackgroundColor="#1976D2" Text="Enter" Clicked="Submit_Clicked" />
-                    </Grid>
-
-                </Grid>
+            <!--First Row-->
+            <Frame HasShadow="True" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="15" BackgroundColor="#3B74B6">
+                <StackLayout Margin="10,-20,0,0">
+                <Label x:Name="question" Style="{StaticResource label}" LineBreakMode="NoWrap" Text=""/>
+                <Label x:Name="answer" Style="{StaticResource label}" Margin="0,-10,0,0" Text=""
+                           TextColor="White" Grid.Row="1" Grid.ColumnSpan="3" LineBreakMode="NoWrap"/>
+                </StackLayout>
             </Frame>
+            <!--Second Row-->
+
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Label x:Name="totalRight" Margin="13,10,0,0" TextColor="ForestGreen" FontSize="25" Text="" HorizontalOptions="StartAndExpand"/>
+            <Label x:Name="totalWrong" Margin="0,10,13,0" TextColor="Red" FontSize="25" Text="" HorizontalOptions="End"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <!--Third Row-->
+            <Button x:Name="sevenButton" Text="7" Grid.Row="3" Grid.Column="0"
+                    Style="{StaticResource button}" BorderRadius="0" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="eightButton" Text="8" Grid.Row="3" Grid.Column="1" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="nineButton" Text="9" Grid.Row="3" Grid.Column="2" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+
+            <!--Fourth Row-->
+            <Button x:Name="fourButton" Text="4" Grid.Row="4" Grid.Column="0" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="fiveButton" Text="5" Grid.Row="4" Grid.Column="1" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="sixButton" Text="6" Grid.Row="4" Grid.Column="2" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+
+            <!--Fith Row-->
+            <Button x:Name="oneButton" Text="1" Grid.Row="5" Grid.Column="0" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="twoButton" Text="2" Grid.Row="5" Grid.Column="1" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="threeButton" Text="3" Grid.Row="5" Grid.Column="2" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+
+            <!--Sixth Row-->
+            <Button x:Name="clearButton" Text="C" Grid.Row="6" Grid.Column="0"
+                    Style="{StaticResource otherButtons}" Clicked="ClearButton_Clicked"/>
+            <Button x:Name="zeroButton" Text="0" Grid.Row="6" Grid.Column="1" 
+                    Style="{StaticResource button}" Clicked="NumberButton_Clicked"/>
+            <Button x:Name="equalsButton" Text="=" Grid.Row="6" Grid.Column="2" 
+                    Style="{StaticResource otherButtons}" Clicked="Equals_Clicked"/>
+            
+        </Grid>
+
 </ContentPage>

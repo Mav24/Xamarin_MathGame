@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MathHelp.NewDesignLook">
+
+    <ContentPage.Resources>
+        <Style x:Key="button" TargetType="Button">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BackgroundColor" Value="#274C77"/>
+            <Setter Property="BorderColor" Value="White"/>
+            <Setter Property="BorderWidth" Value="1"/>
+        </Style>
+        <Style x:Key="otherButtons" TargetType="Button" BasedOn="{StaticResource button}">
+            <Setter Property="BackgroundColor" Value="Orange"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="#274C77">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Frame HasShadow="True" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="15" BackgroundColor="#274C77">
+            <StackLayout Margin="10,-20,0,0">
+                <Label x:Name="question" FontSize="48" FontAttributes="Bold" LineBreakMode="NoWrap" Text=""
+                       TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                <!--Second Row-->
+                <Label x:Name="answer" FontSize="48" Margin="0,-10,0,0" FontAttributes="Bold" Text=""
+                       TextColor="White" Grid.Row="1" Grid.ColumnSpan="3" LineBreakMode="NoWrap"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Frame>
+        <!--First Row-->
+
+        
+
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="3"  Margin="10,0,0,0" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+            <Label x:Name="totalRight" TextColor="Green" FontSize="30" Text="Correct answers: 1"/>
+            <Label x:Name="totalWrong" TextColor="Red" FontSize="30" Text="Wrong answers: 2"/>
+        </StackLayout>
+        
+        <!--Third Row-->
+        <Button Text="7" Grid.Row="3" Grid.Column="0"
+                Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="8" Grid.Row="3" Grid.Column="1" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="9" Grid.Row="3" Grid.Column="2" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        
+        <!--Fourth Row-->
+        <Button Text="4" Grid.Row="4" Grid.Column="0" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="5" Grid.Row="4" Grid.Column="1" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="6" Grid.Row="4" Grid.Column="2" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        
+        <!--Fith Row-->
+        <Button Text="1" Grid.Row="5" Grid.Column="0" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="2" Grid.Row="5" Grid.Column="1" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="3" Grid.Row="5" Grid.Column="2" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        
+        <!--Sixth Row-->
+        <Button Text="0" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource button}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+        <Button Text="=" Grid.Row="6" Grid.Column="2" Style="{StaticResource otherButtons}"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="Equals_Clicked"/>
+        
+        <!--Seventh Row-->
+        <Button Text="Delete" Grid.Row="7" Grid.ColumnSpan="3"
+                TextColor="Black" FontSize="36" BorderRadius="0" Clicked="NumberSelected"/>
+    </Grid>
+</ContentPage>
